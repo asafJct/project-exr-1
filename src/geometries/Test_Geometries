@@ -6,7 +6,7 @@
     Coordinate z = new Coordinate(-5.88);
     
     Point3D testP1 = new Point3D(x,y,z);
-    
+    testP1.distance(testP1);//must throw an exception .
 
    //Test case: the same point , must throw an exception.
    testP1.distance(testP1);
