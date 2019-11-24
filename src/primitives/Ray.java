@@ -8,7 +8,7 @@ public class Ray {
 
 	public Ray(Vector _vec, Vector _direction) {
 		vec = _vec;
-		direction =_directon;
+		direction =_directon.Normal();
 	}
 	
 //  #region getters
@@ -28,13 +28,13 @@ public class Ray {
 			if (vec.equals(other) == true) {
 				return true;
 			}
-		}
 		return false;
 	}
 	
 //
 	@Override
 	public String toString() {
-		return 
+		return  "Ray :  " + vec.toString()
+			"t ("+ distance.toString() +")" ;
 	}
 }
