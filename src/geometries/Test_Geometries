@@ -32,6 +32,14 @@
    }
     
     /* 
+    
+    Point in space:
+- Vector subtraction - Gets a second point in the parameter, returns a vector from the second point to the point at 
+which the operation is performed
+- Adding vector to a point - Returns a new point
+- The insect between two squared points
+- Distance between 2 points (previous action must be used)
+vector
     - Vector addition / subtraction (return new vector)
 - Scalar Vector Multiplier (returns new vector)
 - Scalar multiplication (product-point)
