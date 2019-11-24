@@ -6,10 +6,10 @@ public class Vector {
 
 	Point3D vec;
 
-	Point3D ZeroVec = new Point3D(Coordiante.ZERO, Coordiante.ZERO, Coordiante.ZERO);
+	static Point3D ZeroVec = new Point3D(Coordiante.ZERO, Coordiante.ZERO, Coordiante.ZERO);
 
 	public Vector(Point3D vec) {
-		if (vec.equals(ZeroVec))
+		if (vec.equals(Vector.ZeroVec))
 			throw new IllegalArgumentException("invalid - vector zero");
 		this.vec = vec;
 	}
@@ -30,6 +30,8 @@ public class Vector {
 	public String toString() {
 		return "Vector [vec=" + vec.toString() + "]";
 	}
+
+	
 
 	public Vector Add(Vector other) {
 		Point3D temp;
@@ -74,12 +76,7 @@ public class Vector {
 		return OtherVec;
 	}
 
-	public double lengthSQ() {
-		double length = Math.pow(this.vec.getX().get(), 2) + Math.pow(this.vec.getY().get(), 2)
-				+ Math.pow(this.vec.getZ().get(), 2);
-		return length;
-	}
-
+	
 	public double length() {
 		return Math.sqrt(lengthSQ());
 	}
@@ -91,15 +88,25 @@ public class Vector {
 		OtherVec = new Vector(temp);
 		return OtherVec;
 	}
-
+//
 	public void newNormal() {
-		double temp;
+		
+		double temp; // Variable 
+		temp = 1 / sqrt(this.lengthSQ());// temp = 1 /(size of vector )
+		
 		Vector OtherVec;
-		temp = 1 / this.length();
 		OtherVec = this.scale(temp);
 		this.vec = OtherVec.vec;
 	}
+	
+//Returns the size of the vector square.
+	public double lengthSQ() {
+		double length = (Math.pow(this.vec.getX().get(), 2) + Math.pow(this.vec.getY().get(), 2)
+				+ Math.pow(this.vec.getZ().get(), 2));
+		return length;
+	}
 
+	
 	public Vector Normal() {
 		Vector OtherVec = new Vector(this.vec);
 		OtherVec.newNormal();
