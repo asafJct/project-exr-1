@@ -1,0 +1,44 @@
+ public static void main(String args[]) 
+    { 
+    
+    Coordinate x = new Coordinate(1.65);
+    Coordinate y = new Coordinate(2.33); 
+    Coordinate z = new Coordinate(-5.88);
+    
+    Point3D testP1 = new Point3D(x,y,z);
+    
+
+   //Test case: the same point , must throw an exception.
+   testP1.distance(testP1);
+   
+   
+    Vector vec = new Vector(Point3D);
+    //Test case: must throw an exception.
+    vec = (vec.add.(vec.scale(-1));
+    //Test case: must throw an exception.
+    vec = vec.dot-product(Vector.zeroVec);
+    
+    //Test case: מאונכים , must throw an exception.
+    Coordinate x = new Coordinate(-1.65);
+    Coordinate y = new Coordinate(0); 
+    Coordinate z = new Coordinate(5.88);
+    
+    Point3D testP2 = new Point3D(x,y,z);
+    Vector normal = new Vector(testP2);
+    
+    vec = vec.CrossProduct(normal,vec);//must throw an exception .
+    
+    
+   }
+    
+    /* 
+    - Vector addition / subtraction (return new vector)
+- Scalar Vector Multiplier (returns new vector)
+- Scalar multiplication (product-point)
+- Vector Multiplier - Returns a new vector perpendicular to the two existing vectors (cross product)
+- Calculate the length of the vector squared
+- Calculate the length of the vector (the previous action must be used)
+- The normalizing vector action that will change the docker itself (the only action that changes the object that was summoned)
+- Normalize operation that returns a new vector normalized in the same direction as the original vector (previous operation must be used)
+    
+    */
